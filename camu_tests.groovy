@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub
-                git 'https://github.com/Akieni-Yao/openimis-be_py.git'
+                git 'https://github.com/openimis/openimis-be_py.git'
             }
         }
         stage('Install Dependencies') {
