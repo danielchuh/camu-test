@@ -42,7 +42,7 @@ pipeline {
         stage('Run Bandit') {
             steps {
                 // Run bandit and generate HTML report
-                    sh 'bandit -r . -lll -f html -o bandit_report.html || true'
+                sh 'bandit -r . -lll -f html -o bandit_report.html || true'
             }
         }
         stage('Run Prospector') {
