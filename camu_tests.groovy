@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub
-                git branch: 'develop', credentialsId: 'daniel-akieni', url: 'https://github.com/openimis/openimis-be_py.git'
+                git branch: 'release/test', credentialsId: 'daniel-akieni', url: 'https://github.com/Akieni-Yao/openimis-be_py.git'
             }
         }
         stage('Install Dependencies') {
