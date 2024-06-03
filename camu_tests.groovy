@@ -18,7 +18,7 @@ pipeline {
                 sh 'pip install --upgrade pip pip-audit'
                 sh 'pip install pip-audit'
                 // Install pyscan
-                sh 'pip install pyscan'
+                sh 'pip install pyscan python-nmap'
                 // Install bandit
                 sh 'pip install bandit'
                 // Install prospector and related tools prospector-html-reporter
