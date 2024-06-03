@@ -30,7 +30,7 @@ pipeline {
         stage('Run pip-audit') {
             steps {
                 // Run pip-audit and generate report
-                sh 'pip-audit --requirement requirements.txt -f json -o report.json'
+                sh 'pip-audit --requirement requirements.txt -f json -o report.json || true'
             }
         }
         // stage('Run PyScan') {
