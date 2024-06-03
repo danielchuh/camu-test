@@ -20,9 +20,9 @@ pipeline {
                 sh 'pip install pyscan'
                 // Install bandit
                 sh 'pip install bandit'
-                // Install prospector and related tools
-                sh 'pip install prospector prospector-html-reporter prospector2html'
-                // Install mypy
+                // Install prospector and related tools prospector-html-reporter
+                sh 'pip install prospector prospector2html'
+                // Install mypy 
                 sh 'pip install mypy'
             }
         }
@@ -48,7 +48,7 @@ pipeline {
             steps {
                 // Run prospector and generate JSON report, then convert to HTML
                 sh 'prospector --no-style-warnings --strictness medium --output-format json > prospector_report.json'
-                sh 'prospector-html --input prospector_report.json'
+                // sh 'prospector-html --input prospector_report.json'
             }
         }
         stage('Run MyPy') {
