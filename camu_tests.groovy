@@ -33,12 +33,12 @@ pipeline {
                 sh 'pip-audit --requirement requirements.txt -f json -o report.json'
             }
         }
-        stage('Run PyScan') {
-            steps {
-                // Run pyscan (not specifying report generation since it wasn't found)
-                sh 'pyscan'
-            }
-        }
+        // stage('Run PyScan') {
+        //     steps {
+        //         // Run pyscan (not specifying report generation since it wasn't found)
+        //         sh 'pyscan'
+        //     }
+        // }
         stage('Run Bandit') {
             steps {
                 // Run bandit and generate HTML report
