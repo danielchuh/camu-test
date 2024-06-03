@@ -16,6 +16,7 @@ pipeline {
             steps {
                 // Install pip-audit
                 sh 'pip install --upgrade pip pip-audit'
+                sh 'pip install pip-audit'
                 // Install pyscan
                 sh 'pip install pyscan'
                 // Install bandit
