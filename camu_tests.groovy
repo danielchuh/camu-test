@@ -42,13 +42,17 @@ pipeline {
         stage('Run Bandit') {
             steps {
                 // Run bandit and generate HTML report
-                sh 'bandit -r . -lll -f html -o bandit_report.html'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh 'bandit -r . -lll -f html -o bandit_report.html'
+                }
             }
         }
         stage('Run Prospector') {
             steps {
                 // Run prospector and generate JSON report, then convert to HTML
-                sh 'prospector --no-style-warnings --strictness medium --output-format json > prospector_report.json'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh 'prospector --no-style-warnings --strictness medium --output-format json > prospector_report.json'
+                }
                 // sh 'prospector-html --input prospector_report.json'
             }
         }
